@@ -56,7 +56,7 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>This part of the documentation covers the installation of Tablib. The first step to using any software package is getting it properly installed. Please read this section carefully, or you may miss out on some nice  <a class="reference internal" href="#speed"><em>speed enhancments</em></a>.</p>
+<p>This part of the documentation covers the installation of Tablib. The first step to using any software package is getting it properly installed. Please read this section carefully, or you may miss out on some nice  <em class="xref std std-ref">speed enhancments</em>.</p>
 <div class="section" id="installing-tablib">
 <h2>Installing Tablib<a class="headerlink" href="#installing-tablib" title="Permalink to this headline">¶</a></h2>
 <p>To install Tablib, it only takes one simple command.</p>
@@ -67,8 +67,20 @@
 </div>
 <p>But, you really shouldn&#8217;t do that.</p>
 </div>
-<div class="section" id="speed-extentions">
-<h2>Speed Extentions<a class="headerlink" href="#speed-extentions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-the-source">
+<h2>Download the Source<a class="headerlink" href="#download-the-source" title="Permalink to this headline">¶</a></h2>
+<p>You can also install tablib from source. The latest release is available from GitHub.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://github.com/kennethreitz/tablib/tarball/master">tarball</a></li>
+<li><a class="reference external" href="http://github.com/kennethreitz/tablib/zipball/master">zipball</a></li>
+</ul>
+<p>Once you have a copy of the source, you can embed it in your Python package, or install it into your site-packages easily.</p>
+<div class="highlight-python"><pre>$ python setup.py install</pre>
+</div>
+<p>To download the full source history from Git, see <a class="reference internal" href="development.html#git"><em>Source Control</em></a>.</p>
+</div>
+<div class="section" id="id1">
+<h2>Speed Extentions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p class="versionadded">
 <span class="versionmodified">New in version 0.8.5.</span></p>
 <p>Tablib is partially dependent on the <strong>pyyaml</strong>, <strong>simplejson</strong>, and <strong>xlwt</strong> modules. To reduce installation issues, fully integrated versions of all required libraries are included in Tablib.</p>
@@ -78,15 +90,6 @@
 <p>If you&#8217;re using Python 2.5 (currently unsupported), you should also install the <strong>simplejson</strong> module. If you&#8217;re using Python 2.6+, the built-in <strong>json</strong> module is already optimized and in use.</p>
 <div class="highlight-python"><pre>$ pip install simplejson</pre>
 </div>
-</div>
-<div class="section" id="pythons-supported">
-<h2>Pythons Supported<a class="headerlink" href="#pythons-supported" title="Permalink to this headline">¶</a></h2>
-<p>At this time, the following Python platforms are officially supported:</p>
-<ul class="simple">
-<li>Python 2.6</li>
-<li>Python 2.7</li>
-</ul>
-<p>Support for other Pythons will be rolled out soon.</p>
 </div>
 <div class="section" id="staying-updated">
 <h2>Staying Updated<a class="headerlink" href="#staying-updated" title="Permalink to this headline">¶</a></h2>
@@ -98,6 +101,7 @@
 <p>When a new version is available, upgrading is simple.</p>
 <div class="highlight-python"><pre>$ pip install tablib --upgrade</pre>
 </div>
+<p>Now, go get a <a class="reference internal" href="quickstart.html#quickstart"><em>Quick Start</em></a>.</p>
 </div>
 </div>
 
@@ -111,8 +115,8 @@
   <ul>
 <li><a class="reference internal" href="#">Installation</a><ul>
 <li><a class="reference internal" href="#installing-tablib">Installing Tablib</a></li>
-<li><a class="reference internal" href="#speed-extentions">Speed Extentions</a></li>
-<li><a class="reference internal" href="#pythons-supported">Pythons Supported</a></li>
+<li><a class="reference internal" href="#download-the-source">Download the Source</a></li>
+<li><a class="reference internal" href="#id1">Speed Extentions</a></li>
 <li><a class="reference internal" href="#staying-updated">Staying Updated</a></li>
 </ul>
 </li>

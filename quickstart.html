@@ -56,16 +56,72 @@
             
   <div class="section" id="quickstart">
 <span id="id1"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>This part of the documentation covers all the interfaces of Tablib.  For
-parts where Tablib depends on external libraries, we document the most
-important right here and provide links to the canonical documentation.</p>
+<p>Eager to get started? This page gives a good introduction in how to get started with Tablib. This assumes you already have Tablib installed. If you do not, head over to the <a class="reference internal" href="install.html#install"><em>Installation</em></a> section.</p>
+<p>First, make sure that:</p>
+<ul class="simple">
+<li>Tablib is <a class="reference internal" href="install.html#install"><em>installed</em></a></li>
+<li>Tablib is <a class="reference internal" href="install.html#updates"><em>up-to-date</em></a></li>
+</ul>
 <div class="section" id="basic-usage">
 <h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lets gets started with some simple use cases and examples.</p>
+<div class="section" id="creating-a-dataset">
+<h3>Creating a Dataset<a class="headerlink" href="#creating-a-dataset" title="Permalink to this headline">¶</a></h3>
+<p>A <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> is nothing more than what it&#8217;s name implies—a set of data.</p>
+<p>Creating your own instance of the <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">tablib.Dataset</span></tt></a> object is simple.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can now start filling this <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object with data.</p>
+<div class="admonition-example-context admonition ">
+<p class="first admonition-title">Example Context</p>
+<p class="last">From here on out, if you see <tt class="docutils literal"><span class="pre">data</span></tt>, assume that it&#8217;s a fresh <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object.</p>
+</div>
+</div>
+<div class="section" id="adding-rows">
+<h3>Adding Rows<a class="headerlink" href="#adding-rows" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-headers">
+<h3>Adding Headers<a class="headerlink" href="#adding-headers" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-columns">
+<h3>Adding Columns<a class="headerlink" href="#adding-columns" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="selecting-rows">
+<h3>Selecting Rows<a class="headerlink" href="#selecting-rows" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="selecting-columns">
+<h3>Selecting Columns<a class="headerlink" href="#selecting-columns" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="p">[</span><span class="s">&#39;Header Name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="advanced-usage">
 <h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="section" id="dynamic-columns">
+<h3>Dynamic Columns<a class="headerlink" href="#dynamic-columns" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>Seperators<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="transposition">
+<h3>Transposition<a class="headerlink" href="#transposition" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shortcuts">
+<h3>Shortcuts<a class="headerlink" href="#shortcuts" title="Permalink to this headline">¶</a></h3>
+<p>Population upon instantiation.</p>
+<p>Now, go check out the <a class="reference internal" href="api.html#api"><em>API Documentation</em></a> or begin <a class="reference internal" href="development.html#development"><em>Tablib Development</em></a>.</p>
+</div>
 </div>
 </div>
 
@@ -78,8 +134,22 @@ important right here and provide links to the canonical documentation.</p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Quickstart</a><ul>
-<li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
-<li><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+<li><a class="reference internal" href="#basic-usage">Basic Usage</a><ul>
+<li><a class="reference internal" href="#creating-a-dataset">Creating a Dataset</a></li>
+<li><a class="reference internal" href="#adding-rows">Adding Rows</a></li>
+<li><a class="reference internal" href="#adding-headers">Adding Headers</a></li>
+<li><a class="reference internal" href="#adding-columns">Adding Columns</a></li>
+<li><a class="reference internal" href="#selecting-rows">Selecting Rows</a></li>
+<li><a class="reference internal" href="#selecting-columns">Selecting Columns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-usage">Advanced Usage</a><ul>
+<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a></li>
+<li><a class="reference internal" href="#id2">Seperators</a></li>
+<li><a class="reference internal" href="#transposition">Transposition</a></li>
+<li><a class="reference internal" href="#shortcuts">Shortcuts</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
