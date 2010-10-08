@@ -37,6 +37,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="api.html" title="API"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -62,22 +65,52 @@
 <h2>Design Considerations<a class="headerlink" href="#design-considerations" title="Permalink to this headline">¶</a></h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
+<div class="section" id="source-control">
+<h2>Source Control<a class="headerlink" href="#source-control" title="Permalink to this headline">¶</a></h2>
+<p>Git.</p>
+</div>
+<div class="section" id="adding-new-formats">
+<h2>Adding New Formats<a class="headerlink" href="#adding-new-formats" title="Permalink to this headline">¶</a></h2>
+<p>Don&#8217;t.</p>
+</div>
 <div class="section" id="testing-tablib">
 <h2>Testing Tablib<a class="headerlink" href="#testing-tablib" title="Permalink to this headline">¶</a></h2>
-<p>Unitetests.</p>
+<p>Testing is crucial to Tablib&#8217;s stability. This stable project is used in production by many companies and developers, so it is important to be certian that every version released is fully operational. When developing a new feature for Tablib, be sure to write proper tests for it as well.</p>
+<div class="section" id="running-the-test-suite">
+<h3>Running the Test Suite<a class="headerlink" href="#running-the-test-suite" title="Permalink to this headline">¶</a></h3>
+<p>When developing a feature for Tablib, the easiest way to test your changes for potential issues is to simply run the test suite directly.</p>
+<div class="highlight-python"><pre>$ ./test_tablib.py</pre>
+</div>
+<p><a class="reference external" href="http://hudson.dev.java.net">Hudson CI</a>, amongst other tools, supports Java&#8217;s xUnit testing report format. <a class="reference external" href="http://somethingaboutorange.com/mrl/projects/nose/">Nose</a> allows us to generate our own xUnit reports.</p>
+<p>Installing nose is simple.</p>
+<div class="highlight-python"><pre>$ pip install nose</pre>
+</div>
+<p>Once installed, we can generate our xUnit report with a single command.</p>
+<div class="highlight-python"><pre>$ nosetests test_tablib.py --with-xunit</pre>
+</div>
+<p>This will generate a <strong>nosetests.xml</strong> file, which can then be analyzed.</p>
+</div>
+<div class="section" id="extending-the-test-suite">
+<h3>Extending the Test Suite<a class="headerlink" href="#extending-the-test-suite" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tablib.formats.sql.test_sql</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="continuous-integration">
 <h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
-<p>Every commit made to the <strong>develop</strong> branch is automatically tested and inspected upon receipt with <a class="reference external" href="https://hudson.dev.java.net">Hudson</a>. If you have access to the main respository and broke the build, you will receive an email accordingly.
-Anyone may view the build status and history at any time.</p>
+<p>Every commit made to the <strong>develop</strong> branch is automatically tested and inspected upon receipt with <a class="reference external" href="http://hudson.dev.java.net">Hudson CI</a>. If you have access to the main respository and broke the build, you will receive an email accordingly.</p>
+<p>Anyone may view the build status and history at any time.</p>
 <blockquote>
 <a class="reference external" href="http://git.kennethreitz.com/ci/">http://git.kennethreitz.com/ci/</a></blockquote>
-<p>Additional reports will also be included here in the future, including PEP 8 checks and stress reports for extremely large datasets.</p>
 <p>If you are trustworthy and plan to contribute to tablib on a regular basis, please contact <a class="reference external" href="http://kennethreitz.com/contact-me/">Kenneth Reitz</a> to get an account on the Hudson Server.</p>
+<p>Additional reports will also be included here in the future, including PEP 8 checks and stress reports for extremely large datasets.</p>
 </div>
 <div class="section" id="building-the-docs">
 <h2>Building the Docs<a class="headerlink" href="#building-the-docs" title="Permalink to this headline">¶</a></h2>
-<p>Documentation is powered by powerful Pocoo project, <a class="reference external" href="http://sphinx.pocoo.org">Sphinx</a>. The API documentation is mostly documented inline</p>
+<p>Documentation is written in the powerful, flexible, and standard Python documentation format, <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructured Text</a>.
+Documentation builds are powered by powerful Pocoo project, <a class="reference external" href="http://sphinx.pocoo.org">Sphinx</a>. The <a class="reference internal" href="api.html#api"><em>API Documentation</em></a> is mostly documented inline throught the module.</p>
 <p>The Docs live in <tt class="docutils literal"><span class="pre">tablib/docs</span></tt>. In order to build them, you will first need to install Sphinx.</p>
 <div class="highlight-python"><pre>$ pip install sphinx</pre>
 </div>
@@ -98,7 +131,7 @@ and <a class="reference external" href="http://github.com/michaeljones/sphinx-to
 <p>Running it against the docs is even simpler.</p>
 <div class="highlight-python"><pre>$ sphinx-to-github _build/html</pre>
 </div>
-<p class="last">Feel free to move the resulting files to the <strong>gh-pages</strong> branch of your repository, and push it up to github. You&#8217;re all set.</p>
+<p class="last">Move the resulting files to the <strong>gh-pages</strong> branch of your repository, and push it up to GitHub.</p>
 </div>
 </div>
 </div>
@@ -114,7 +147,13 @@ and <a class="reference external" href="http://github.com/michaeljones/sphinx-to
 <li><a class="reference internal" href="#">Development</a><ul>
 <li><a class="reference internal" href="#future-of-tablib">Future of Tablib</a></li>
 <li><a class="reference internal" href="#design-considerations">Design Considerations</a></li>
-<li><a class="reference internal" href="#testing-tablib">Testing Tablib</a></li>
+<li><a class="reference internal" href="#source-control">Source Control</a></li>
+<li><a class="reference internal" href="#adding-new-formats">Adding New Formats</a></li>
+<li><a class="reference internal" href="#testing-tablib">Testing Tablib</a><ul>
+<li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a></li>
+<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
 <li><a class="reference internal" href="#building-the-docs">Building the Docs</a></li>
 </ul>
