@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Development &mdash; Tablib v0.8.3 documentation</title>
-    <link rel="stylesheet" href="static/flasky.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -18,15 +18,15 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Tablib v0.8.3 documentation" href="index.html" />
     <link rel="next" title="API" href="api.html" />
     <link rel="prev" title="Quickstart" href="quickstart.html" />
    
   
-  <link media="only screen and (max-device-width: 480px)" href="static/small_flask.css" type= "text/css" rel="stylesheet" />
+  <link media="only screen and (max-device-width: 480px)" href="_static/small_flask.css" type= "text/css" rel="stylesheet" />
 
   </head>
   <body>
@@ -62,6 +62,45 @@
 <h2>Design Considerations<a class="headerlink" href="#design-considerations" title="Permalink to this headline">¶</a></h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
+<div class="section" id="testing-tablib">
+<h2>Testing Tablib<a class="headerlink" href="#testing-tablib" title="Permalink to this headline">¶</a></h2>
+<p>Unitetests.</p>
+</div>
+<div class="section" id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
+<p>Every commit made to the <strong>develop</strong> branch is automatically tested and inspected upon receipt with <a class="reference external" href="https://hudson.dev.java.net">Hudson</a>. If you have access to the main respository and broke the build, you will receive an email accordingly.
+Anyone may view the build status and history at any time.</p>
+<blockquote>
+<a class="reference external" href="http://git.kennethreitz.com/ci/">http://git.kennethreitz.com/ci/</a></blockquote>
+<p>Additional reports will also be included here in the future, including PEP 8 checks and stress reports for extremely large datasets.</p>
+<p>If you are trustworthy and plan to contribute to tablib on a regular basis, please contact <a class="reference external" href="http://kennethreitz.com/contact-me/">Kenneth Reitz</a> to get an account on the Hudson Server.</p>
+</div>
+<div class="section" id="building-the-docs">
+<h2>Building the Docs<a class="headerlink" href="#building-the-docs" title="Permalink to this headline">¶</a></h2>
+<p>Documentation is powered by powerful Pocoo project, <a class="reference external" href="http://sphinx.pocoo.org">Sphinx</a>. The API documentation is mostly documented inline</p>
+<p>The Docs live in <tt class="docutils literal"><span class="pre">tablib/docs</span></tt>. In order to build them, you will first need to install Sphinx.</p>
+<div class="highlight-python"><pre>$ pip install sphinx</pre>
+</div>
+<p>Then, to build an HTML version of the docs, simply run the following from the <strong>docs</strong> directory:</p>
+<div class="highlight-python"><pre>$ make html</pre>
+</div>
+<p>Your <tt class="docutils literal"><span class="pre">docs/_build/html</span></tt> directory will then contain an HTML representation of the documentation, ready for publication on most web servers.</p>
+<p>You can also generate the documentation in <strong>ebpub</strong>, <strong>latex</strong>, <strong>json</strong>, <em>&amp;c</em> similarly.</p>
+<div class="admonition-github-pages admonition ">
+<p class="first admonition-title">GitHub Pages</p>
+<p>To push the documentation up to <a class="reference external" href="http://pages.github.com">GitHub Pages</a>, you will first need to run <a class="reference external" href="http://github.com/michaeljones/sphinx-to-github">sphinx-to-github</a> against your <tt class="docutils literal"><span class="pre">docs/_build/html</span></tt> directory.</p>
+<p>GitHub Pages are powered by an HTML generation system called <a class="reference external" href="http://github.com/mojombo/jekyll">Jeckyl</a>, which is configured to ignore files and folders that begin with &#8220;<tt class="docutils literal"><span class="pre">_</span></tt>&#8221; (<em>ie.</em> <strong>_static</strong>).</p>
+<blockquote>
+and <a class="reference external" href="http://github.com/michaeljones/sphinx-to-github">sphinx-to-github</a>.</blockquote>
+<p>Installing sphinx-to-github is simple.</p>
+<div class="highlight-python"><pre>$ pip install sphinx-to-github</pre>
+</div>
+<p>Running it against the docs is even simpler.</p>
+<div class="highlight-python"><pre>$ sphinx-to-github _build/html</pre>
+</div>
+<p class="last">Feel free to move the resulting files to the <strong>gh-pages</strong> branch of your repository, and push it up to github. You&#8217;re all set.</p>
+</div>
+</div>
 </div>
 
 
@@ -75,6 +114,9 @@
 <li><a class="reference internal" href="#">Development</a><ul>
 <li><a class="reference internal" href="#future-of-tablib">Future of Tablib</a></li>
 <li><a class="reference internal" href="#design-considerations">Design Considerations</a></li>
+<li><a class="reference internal" href="#testing-tablib">Testing Tablib</a></li>
+<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+<li><a class="reference internal" href="#building-the-docs">Building the Docs</a></li>
 </ul>
 </li>
 </ul>
@@ -87,7 +129,7 @@
 </ul>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="sources/development.txt"
+    <li><a href="_sources/development.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
