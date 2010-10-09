@@ -54,9 +54,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="quickstart">
-<span id="id1"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>Eager to get started? This page gives a good introduction in how to get started with Tablib. This assumes you already have Tablib installed. If you do not, head over to the <a class="reference internal" href="install.html#install"><em>Installation</em></a> section.</p>
+  <div class="section" id="id1">
+<h1>Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-tablib"></span><p>Eager to get started? This page gives a good introduction in how to get started with Tablib. This assumes you already have Tablib installed. If you do not, head over to the <a class="reference internal" href="install.html#install"><em>Installation</em></a> section.</p>
 <p>First, make sure that:</p>
 <ul class="simple">
 <li>Tablib is <a class="reference internal" href="install.html#install"><em>installed</em></a></li>
@@ -67,7 +67,7 @@
 <p>Lets gets started with some simple use cases and examples.</p>
 <div class="section" id="creating-a-dataset">
 <h3>Creating a Dataset<a class="headerlink" href="#creating-a-dataset" title="Permalink to this headline">¶</a></h3>
-<p>A <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> is nothing more than what it&#8217;s name implies—a set of data.</p>
+<p>A <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> is nothing more than what its name implies—a set of data.</p>
 <p>Creating your own instance of the <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">tablib.Dataset</span></tt></a> object is simple.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
 </pre></div>
@@ -80,21 +80,56 @@
 </div>
 <div class="section" id="adding-rows">
 <h3>Adding Rows<a class="headerlink" href="#adding-rows" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<p>Let&#8217;s say you want to collect a simple list of names.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># collection of names</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Kenneth Reitz&#39;</span><span class="p">,</span> <span class="s">&#39;Bessie Monke&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="c"># split name appropriately</span>
+    <span class="n">fname</span><span class="p">,</span> <span class="n">lname</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="c"># add names to Dataset</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">fname</span><span class="p">,</span> <span class="n">lname</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You can get a nice, Pythonic view of the dataset at any time with <a class="reference internal" href="api.html#tablib.Dataset.dict" title="tablib.Dataset.dict"><tt class="xref py py-class docutils literal"><span class="pre">Dataset.dict</span></tt></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">dict</span>
+<span class="go">[(&#39;Kenneth&#39;, &#39;Reitz&#39;), (&#39;Bessie&#39;, &#39;Monke&#39;)]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-headers">
 <h3>Adding Headers<a class="headerlink" href="#adding-headers" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<p>It&#8217;s time enhance our <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> by giving our columns some titles. To do so, set <a class="reference internal" href="api.html#tablib.Dataset.headers" title="tablib.Dataset.headers"><tt class="xref py py-class docutils literal"><span class="pre">Dataset.headers</span></tt></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;First Name&#39;</span><span class="p">,</span> <span class="s">&#39;Last Name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Let&#8217;s view the data in YAML this time.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
+<span class="go">- {First Name: Kenneth, Last Name: Reitz}</span>
+<span class="go">- {First Name: Bessie, Last Name: Monke}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-columns">
 <h3>Adding Columns<a class="headerlink" href="#adding-columns" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a basic <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> in place, let&#8217;s add a column of <strong>ages</strong> to it.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Let&#8217;s view the data in CSV this time.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">csv</span>
+<span class="go">Last Name,First Name,Age</span>
+<span class="go">Reitz,Kenneth,22</span>
+<span class="go">Monke,Bessie,21</span>
+</pre></div>
+</div>
+<p>It&#8217;s that easy.</p>
 </div>
 <div class="section" id="selecting-rows">
 <h3>Selecting Rows<a class="headerlink" href="#selecting-rows" title="Permalink to this headline">¶</a></h3>
+<p>If we had a Dataset with thousands of rows, it would be useful to get a list of values in a column.
+To do so, we access the <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> as if it were a standard Python dictionary.</p>
 </div>
 <div class="section" id="selecting-columns">
 <h3>Selecting Columns<a class="headerlink" href="#selecting-columns" title="Permalink to this headline">¶</a></h3>
@@ -108,8 +143,8 @@
 <div class="section" id="dynamic-columns">
 <h3>Dynamic Columns<a class="headerlink" href="#dynamic-columns" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="id2">
-<h3>Seperators<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="seperators">
+<span id="id2"></span><h3>Seperators<a class="headerlink" href="#seperators" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="transposition">
 <h3>Transposition<a class="headerlink" href="#transposition" title="Permalink to this headline">¶</a></h3>
@@ -145,7 +180,7 @@
 </li>
 <li><a class="reference internal" href="#advanced-usage">Advanced Usage</a><ul>
 <li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a></li>
-<li><a class="reference internal" href="#id2">Seperators</a></li>
+<li><a class="reference internal" href="#seperators">Seperators</a></li>
 <li><a class="reference internal" href="#transposition">Transposition</a></li>
 <li><a class="reference internal" href="#shortcuts">Shortcuts</a></li>
 </ul>

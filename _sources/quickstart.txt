@@ -1,0 +1,133 @@
+.. _quickstart:
+Quickstart
+==========
+
+.. module:: tablib
+
+
+Eager to get started? This page gives a good introduction in how to get started with Tablib. This assumes you already have Tablib installed. If you do not, head over to the :ref:`Installation <install>` section.
+
+First, make sure that:
+
+* Tablib is :ref:`installed <install>`
+* Tablib is :ref:`up-to-date <updates>`
+
+
+
+Basic Usage
+-----------
+
+Lets gets started with some simple use cases and examples.
+
+Creating a Dataset
+++++++++++++++++++
+
+A :class:`Dataset <tablib.Dataset>` is nothing more than what its name implies—a set of data.
+
+Creating your own instance of the :class:`tablib.Dataset` object is simple. ::
+
+    data = tablib.Dataset()
+    
+You can now start filling this :class:`Dataset <tablib.Dataset>` object with data.
+
+.. admonition:: Example Context
+     
+     From here on out, if you see ``data``, assume that it's a fresh :class:`Dataset <tablib.Dataset>` object.
+
+
+Adding Rows
++++++++++++
+
+Let's say you want to collect a simple list of names. ::
+
+    # collection of names
+    names = ['Kenneth Reitz', 'Bessie Monke']
+
+    for name in names:
+        # split name appropriately
+        fname, lname = name.split()
+        
+        # add names to Dataset
+        data.append([fname, lname])
+
+You can get a nice, Pythonic view of the dataset at any time with :class:`Dataset.dict`.
+
+    >>> data.dict
+    [('Kenneth', 'Reitz'), ('Bessie', 'Monke')]
+
+
+Adding Headers
+++++++++++++++
+
+It's time enhance our :class:`Dataset` by giving our columns some titles. To do so, set :class:`Dataset.headers`. ::
+
+    data.headers = ['First Name', 'Last Name']
+
+Let's view the data in YAML this time. ::
+
+    >>> data.yaml
+    - {First Name: Kenneth, Last Name: Reitz}
+    - {First Name: Bessie, Last Name: Monke}
+    
+
+Adding Columns
+++++++++++++++
+
+Now that we have a basic :class:`Dataset` in place, let's add a column of **ages** to it. ::
+
+    data.append(col=['Age', 22, 21])
+    
+Let's view the data in CSV this time. ::
+
+    >>> data.csv
+    Last Name,First Name,Age 
+    Reitz,Kenneth,22 
+    Monke,Bessie,21 
+
+It's that easy.
+
+Selecting Rows
+++++++++++++++
+
+If we had a Dataset with thousands of rows, it would be useful to get a list of values in a column.
+To do so, we access the :class:`Dataset` as if it were a standard Python dictionary.
+
+Selecting Columns
++++++++++++++++++
+
+::
+
+    data['Header Name']
+
+
+
+
+
+Advanced Usage
+--------------
+
+Dynamic Columns
++++++++++++++++
+
+.. _seperators:
+
+Seperators
+++++++++++
+
+
+
+Transposition
++++++++++++++
+
+::
+
+    data.transpose()
+
+
+Shortcuts
++++++++++
+
+Population upon instantiation.
+
+
+Now, go check out the :ref:`API Documentation <api>` or begin :ref:`Tablib Development <development>`.
