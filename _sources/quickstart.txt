@@ -89,8 +89,10 @@ It's that easy.
 Selecting Rows
 ++++++++++++++
 
-If we had a Dataset with thousands of rows, it would be useful to get a list of values in a column.
-To do so, we access the :class:`Dataset` as if it were a standard Python dictionary.
+If we had a set of data consisting of thousands of rows, it would be useful to get a list of values in a column.
+To do so, we access the :class:`Dataset` as if it were a standard Python dictionary. ::
+
+    
 
 Selecting Columns
 +++++++++++++++++
