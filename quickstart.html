@@ -155,7 +155,7 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="bp">None</span>
 </pre></div>
 </div>
-<p>We can now add a dynamic column to our <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object. In this example, we have a function that generates a random grade for our students. The first argument that is passed in to the given callable is the current row.</p>
+<p>We can now add a dynamic column to our <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object. In this example, we have a function that generates a random grade for our students.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">random_grade</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -165,26 +165,40 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="p">[</span><span class="n">random_grade</span><span class="p">])</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Now we can add our headers back. ::</dt>
-<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">_headers</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;Random&#39;</span><span class="p">]</span>
+<p>Now add the headers back, with our new column.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">_headers</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;Random&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</dd>
-</dl>
 <p>Let&#8217;s have a look at our data.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
 <span class="go">- {Age: 22, First Name: Kenneth, Grade: 0.6, Last Name: Reitz}</span>
 <span class="go">- {Age: 21, First Name: Bessie, Grade: 0.75, Last Name: Monke}</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Let&#8217;s delete that column.  ::</dt>
-<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Grade&#39;</span><span class="p">]</span>
+<p>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Grade&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+<div class="section" id="advanced-usage">
+<h3>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h3>
+<p>When you add a dynamic column, the first argument that is passed in to the given <strong>callable</strong> is the current data row. You can use this to run calculations against your dataset.</p>
+<p>For example, we can use the data available in the row to guess the gender of a student.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">guess_gender</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates gender of given student data row.&quot;&quot;&quot;</span>
+    <span class="n">m_names</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Kenneth&#39;</span><span class="p">,</span> <span class="s">&#39;Mike&#39;</span><span class="p">,</span> <span class="s">&#39;Yuri&#39;</span><span class="p">)</span>
+    <span class="n">f_names</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Bessie&#39;</span><span class="p">,</span> <span class="s">&#39;Samantha&#39;</span><span class="p">,</span> <span class="s">&#39;Heather&#39;</span><span class="p">)</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">m_names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&#39;Male&#39;</span>
+    <span class="k">elif</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">f_names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&#39;Female&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&#39;Unknown&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="seperators">
 <span id="id2"></span><h2>Seperators<a class="headerlink" href="#seperators" title="Permalink to this headline">¶</a></h2>
@@ -217,7 +231,10 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <li><a class="reference internal" href="#adding-headers">Adding Headers</a></li>
 <li><a class="reference internal" href="#adding-columns">Adding Columns</a></li>
 <li><a class="reference internal" href="#selecting-rows-columns">Selecting Rows &amp; Columns</a></li>
-<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a></li>
+<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a><ul>
+<li><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#seperators">Seperators</a></li>
 <li><a class="reference internal" href="#transposition">Transposition</a></li>
 <li><a class="reference internal" href="#shortcuts">Shortcuts</a></li>

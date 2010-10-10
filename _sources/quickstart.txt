@@ -118,7 +118,8 @@ So, let's save our headers for later, then remove them. ::
     _headers = list(data.headers)
     data.headers = None
 
-We can now add a dynamic column to our :class:`Dataset` object. In this example, we have a function that generates a random grade for our students. The first argument that is passed in to the given callable is the current row. ::
+
+We can now add a dynamic column to our :class:`Dataset` object. In this example, we have a function that generates a random grade for our students. ::
 
     import random
     
@@ -129,7 +130,8 @@ We can now add a dynamic column to our :class:`Dataset` object. In this example,
     data.append(col=[random_grade])
 
 
-Now we can add our headers back. ::
+Now add the headers back, with our new column. ::
+
     >>> data.headers = _headers + ['Random']
 
 Let's have a look at our data. ::
@@ -139,9 +141,35 @@ Let's have a look at our data. ::
     - {Age: 21, First Name: Bessie, Grade: 0.75, Last Name: Monke}
 
 
+.  ::
 
-Let's delete that column.  ::
     >>> del data['Grade']
+
+
+Advanced Usage
+++++++++++++++
+
+When you add a dynamic column, the first argument that is passed in to the given **callable** is the current data row. You can use this to run calculations against your dataset. 
+
+For example, we can use the data available in the row to guess the gender of a student.
+
+::
+
+    def guess_gender(row):
+        """Calculates gender of given student data row."""
+        m_names = ('Kenneth', 'Mike', 'Yuri')
+        f_names = ('Bessie', 'Samantha', 'Heather')
+        
+        name = row[0]
+        
+        if name in m_names:
+            return 'Male'
+        elif name in f_names:
+            return 'Female'
+        else:
+            return 'Unknown'
+
+
 
 
 .. _seperators:
