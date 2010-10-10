@@ -54,8 +54,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="id1">
-<h1>Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="quickstart">
+<span id="id1"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-tablib"></span><p>Eager to get started? This page gives a good introduction in how to get started with Tablib. This assumes you already have Tablib installed. If you do not, head over to the <a class="reference internal" href="install.html#install"><em>Installation</em></a> section.</p>
 <p>First, make sure that:</p>
 <ul class="simple">
@@ -144,6 +144,14 @@ To do so, we access the <a class="reference internal" href="api.html#tablib.Data
 </pre></div>
 </div>
 </div>
+<div class="section" id="removing-rows-columns">
+<h2>Removing Rows &amp; Columns<a class="headerlink" href="#removing-rows-columns" title="Permalink to this headline">¶</a></h2>
+<p>Fucking easy.</p>
+</div>
+</div>
+<div class="section" id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
+<p>And now for something completely different.</p>
 <div class="section" id="dynamic-columns">
 <h2>Dynamic Columns<a class="headerlink" href="#dynamic-columns" title="Permalink to this headline">¶</a></h2>
 <p class="versionadded">
@@ -175,13 +183,13 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <span class="go">- {Age: 21, First Name: Bessie, Grade: 0.75, Last Name: Monke}</span>
 </pre></div>
 </div>
-<p>.</p>
+<p>Let&#8217;s remove that column.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Grade&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="section" id="advanced-usage">
-<h3>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h3>
-<p>When you add a dynamic column, the first argument that is passed in to the given <strong>callable</strong> is the current data row. You can use this to run calculations against your dataset.</p>
+<div class="section" id="id2">
+<h3>Advanced Usage<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>When you add a dynamic column, the first argument that is passed in to the given callable is the current data row. You can use this to perform calculations against your data row.</p>
 <p>For example, we can use the data available in the row to guess the gender of a student.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">guess_gender</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculates gender of given student data row.&quot;&quot;&quot;</span>
@@ -198,22 +206,28 @@ For now, this is only supported on <a class="reference internal" href="api.html#
         <span class="k">return</span> <span class="s">&#39;Unknown&#39;</span>
 </pre></div>
 </div>
-</div>
+<p>Adding this function to our dataset would result in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
+<span class="go">- {Age: 22, First Name: Kenneth, Gender: Male, Last Name: Reitz}</span>
+<span class="go">- {Age: 21, First Name: Bessie, Gender: Female, Last Name: Monke}</span>
+</pre></div>
 </div>
 <div class="section" id="seperators">
-<span id="id2"></span><h2>Seperators<a class="headerlink" href="#seperators" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h4>Seperators<a class="headerlink" href="#seperators" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="transposition">
-<h2>Transposition<a class="headerlink" href="#transposition" title="Permalink to this headline">¶</a></h2>
+<h4>Transposition<a class="headerlink" href="#transposition" title="Permalink to this headline">¶</a></h4>
 <p>Thanks to Luca Beltrame, <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> objects</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="shortcuts">
-<h2>Shortcuts<a class="headerlink" href="#shortcuts" title="Permalink to this headline">¶</a></h2>
+<h4>Shortcuts<a class="headerlink" href="#shortcuts" title="Permalink to this headline">¶</a></h4>
 <p>Population upon instantiation.</p>
 <p>Now, go check out the <a class="reference internal" href="api.html#api"><em>API Documentation</em></a> or begin <a class="reference internal" href="development.html#development"><em>Tablib Development</em></a>.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -231,13 +245,19 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <li><a class="reference internal" href="#adding-headers">Adding Headers</a></li>
 <li><a class="reference internal" href="#adding-columns">Adding Columns</a></li>
 <li><a class="reference internal" href="#selecting-rows-columns">Selecting Rows &amp; Columns</a></li>
-<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a><ul>
-<li><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+<li><a class="reference internal" href="#removing-rows-columns">Removing Rows &amp; Columns</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#advanced-usage">Advanced Usage</a><ul>
+<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a><ul>
+<li><a class="reference internal" href="#id2">Advanced Usage</a><ul>
 <li><a class="reference internal" href="#seperators">Seperators</a></li>
 <li><a class="reference internal" href="#transposition">Transposition</a></li>
 <li><a class="reference internal" href="#shortcuts">Shortcuts</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
