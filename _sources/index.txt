@@ -6,7 +6,7 @@
 Tablib: Pythonic Tabular Data 
 =============================
 
-Welcome to Tablib's docuemtation. 
+Welcome to Tablib's documentation. 
 
 .. Contents:
 .. 
@@ -29,7 +29,7 @@ I recommend you start off with :ref:`Installation <install>`.
 User's Guide
 ------------
 
-This part of the documentation, which is mostly prose, begins with some background information about Tablib, then focuses on step-by-step instructions for web development with Flask.
+This part of the documentation, which is mostly prose, begins with some background information about Tablib, then focuses on step-by-step instructions for getting the most out of your datasets.
 
 .. toctree::
    :maxdepth: 2

@@ -67,7 +67,7 @@
 <li><tt class="docutils literal"><span class="pre">Dataset.traspose()</span></tt> support</li>
 </ul>
 <div class="section" id="design-considerations">
-<h2>Design Considerations<a class="headerlink" href="#design-considerations" title="Permalink to this headline">¶</a></h2>
+<span id="design"></span><h2>Design Considerations<a class="headerlink" href="#design-considerations" title="Permalink to this headline">¶</a></h2>
 <p>Tablib was developed with a few <span class="target" id="index-0"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0020"><strong>PEP 20</strong></a> idioms in mind.</p>
 <ol class="arabic simple">
 <li>Beautiful is better than ugly.</li>
@@ -79,18 +79,28 @@
 <p>It strives to be as simple to use as possible.</p>
 </div>
 <div class="section" id="source-control">
-<h2>Source Control<a class="headerlink" href="#source-control" title="Permalink to this headline">¶</a></h2>
+<span id="scm"></span><h2>Source Control<a class="headerlink" href="#source-control" title="Permalink to this headline">¶</a></h2>
+<p>Tablib source is controlled with <a class="reference external" href="http://git-scm.org">Git</a>, the lean, mean, distributed source control machine.</p>
+<p><strong>Branch Structure</strong></p>
+<blockquote>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">develop</span></tt></dt>
+<dd>The &#8220;next release&#8221; branch. Likely unstable.</dd>
+<dt><tt class="docutils literal"><span class="pre">master</span></tt></dt>
+<dd>Current production release (0.8.5) on PyPi.</dd>
+</dl>
+</blockquote>
 <p>Git.
 GitHub.
 git.kennethreitz.com</p>
 <p>Git Flow</p>
 </div>
 <div class="section" id="adding-new-formats">
-<h2>Adding New Formats<a class="headerlink" href="#adding-new-formats" title="Permalink to this headline">¶</a></h2>
+<span id="newformats"></span><h2>Adding New Formats<a class="headerlink" href="#adding-new-formats" title="Permalink to this headline">¶</a></h2>
 <p>Don&#8217;t.</p>
 </div>
 <div class="section" id="testing-tablib">
-<h2>Testing Tablib<a class="headerlink" href="#testing-tablib" title="Permalink to this headline">¶</a></h2>
+<span id="testing"></span><h2>Testing Tablib<a class="headerlink" href="#testing-tablib" title="Permalink to this headline">¶</a></h2>
 <p>Testing is crucial to Tablib&#8217;s stability. This stable project is used in production by many companies and developers, so it is important to be certian that every version released is fully operational. When developing a new feature for Tablib, be sure to write proper tests for it as well.</p>
 <div class="section" id="running-the-test-suite">
 <h3>Running the Test Suite<a class="headerlink" href="#running-the-test-suite" title="Permalink to this headline">¶</a></h3>
@@ -112,19 +122,19 @@ git.kennethreitz.com</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tablib.formats.sql.test_sql</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="section" id="continuous-integration">
-<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
+<h4>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h4>
 <p>Every commit made to the <strong>develop</strong> branch is automatically tested and inspected upon receipt with <a class="reference external" href="http://hudson.dev.java.net">Hudson CI</a>. If you have access to the main respository and broke the build, you will receive an email accordingly.</p>
 <p>Anyone may view the build status and history at any time.</p>
 <blockquote>
 <a class="reference external" href="http://git.kennethreitz.com/ci/">http://git.kennethreitz.com/ci/</a></blockquote>
 <p>If you are trustworthy and plan to contribute to tablib on a regular basis, please contact <a class="reference external" href="http://kennethreitz.com/contact-me/">Kenneth Reitz</a> to get an account on the Hudson Server.</p>
-<p>Additional reports will also be included here in the future, including PEP 8 checks and stress reports for extremely large datasets.</p>
+<p>Additional reports will also be included here in the future, including <span class="target" id="index-1"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0008"><strong>PEP 8</strong></a> checks and stress reports for extremely large datasets.</p>
+</div>
+</div>
 </div>
 <div class="section" id="building-the-docs">
-<h2>Building the Docs<a class="headerlink" href="#building-the-docs" title="Permalink to this headline">¶</a></h2>
+<span id="docs"></span><h2>Building the Docs<a class="headerlink" href="#building-the-docs" title="Permalink to this headline">¶</a></h2>
 <p>Documentation is written in the powerful, flexible, and standard Python documentation format, <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructured Text</a>.
 Documentation builds are powered by the powerful Pocoo project, <a class="reference external" href="http://sphinx.pocoo.org">Sphinx</a>. The <a class="reference internal" href="api.html#api"><em>API Documentation</em></a> is mostly documented inline throught the module.</p>
 <p>The Docs live in <tt class="docutils literal"><span class="pre">tablib/docs</span></tt>. In order to build them, you will first need to install Sphinx.</p>
@@ -149,6 +159,7 @@ and <a class="reference external" href="http://github.com/michaeljones/sphinx-to
 </div>
 <p class="last">Move the resulting files to the <strong>gh-pages</strong> branch of your repository, and push it up to GitHub.</p>
 </div>
+<hr class="docutils" />
 <p>Make sure to check out the <a class="reference internal" href="api.html#api"><em>API Documentation</em></a>.</p>
 </div>
 </div>
@@ -167,10 +178,12 @@ and <a class="reference external" href="http://github.com/michaeljones/sphinx-to
 <li><a class="reference internal" href="#adding-new-formats">Adding New Formats</a></li>
 <li><a class="reference internal" href="#testing-tablib">Testing Tablib</a><ul>
 <li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a></li>
-<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a></li>
+<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a><ul>
+<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#building-the-docs">Building the Docs</a></li>
 </ul>
 </li>
