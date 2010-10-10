@@ -113,8 +113,10 @@ defined within the <a class="reference internal" href="#tablib.Dataset" title="t
 </div>
 <p>You can also add a column of a single callable object, which will
 add a new column with the return values of the callable each as an 
-item in the column.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">)</span>
+item in the column. The callable can be written to perform calculations
+on the current row. The callable receives a tuple representation of
+the current data row as the first parameter.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -122,7 +124,7 @@ item in the column.</p>
 <dl class="method">
 <dt id="tablib.Dataset.append_separator">
 <tt class="descname">append_separator</tt><big>(</big><em>text='-'</em><big>)</big><a class="headerlink" href="#tablib.Dataset.append_separator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a <a class="reference internal" href="quickstart.html#seperators"><em>seperator</em></a> to the <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a>.</p>
+<dd><p>Adds a <a class="reference internal" href="tutorial.html#seperators"><em>seperator</em></a> to the <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a>.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -216,7 +218,7 @@ Cannot be directly modified.</p>
 <dl class="attribute">
 <dt id="tablib.Dataset.xls">
 <tt class="descname">xls</tt><a class="headerlink" href="#tablib.Dataset.xls" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Excel Spreadsheet representation of the <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object, with <a class="reference internal" href="quickstart.html#seperators"><em>Seperators</em></a>. Cannot be set.</p>
+<dd><p>An Excel Spreadsheet representation of the <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object, with <a class="reference internal" href="tutorial.html#seperators"><em>Seperators</em></a>. Cannot be set.</p>
 <div class="admonition-binary-warning admonition ">
 <p class="first admonition-title">Binary Warning</p>
 <p><a class="reference internal" href="#tablib.Dataset.xls" title="tablib.Dataset.xls"><tt class="xref py py-class docutils literal"><span class="pre">Dataset.xls</span></tt></a> contains binary data, so make sure to write in binary mode:</p>
