@@ -102,7 +102,7 @@ Building the Docs
 -----------------
 
 Documentation is written in the powerful, flexible, and standard Python documentation format, `reStructured Text`_. 
-Documentation builds are powered by powerful Pocoo project, Sphinx_. The :ref:`API Documentation <api>` is mostly documented inline throught the module.
+Documentation builds are powered by the powerful Pocoo project, Sphinx_. The :ref:`API Documentation <api>` is mostly documented inline throught the module.
 
 The Docs live in ``tablib/docs``. In order to build them, you will first need to install Sphinx. ::
 
