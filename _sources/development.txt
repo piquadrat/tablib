@@ -145,7 +145,6 @@ Testing Tablib
 Testing is crucial to Tablib's stability. This stable project is used in production by many companies and developers, so it is important to be certian that every version released is fully operational. When developing a new feature for Tablib, be sure to write proper tests for it as well.
 
 
-++++++++++++++++++++++
 Running the Test Suite
 ++++++++++++++++++++++
 
@@ -170,7 +169,7 @@ This will generate a **nosetests.xml** file, which can then be analyzed.
 .. _Nose: http://somethingaboutorange.com/mrl/projects/nose/
 
 
-++++++++++++++++++++++++
+
 Extending the Test Suite
 ++++++++++++++++++++++++
 
@@ -181,6 +180,7 @@ Example: ::
 
 
 .. _hudson:
+
 Continuous Integration
 ----------------------
 

@@ -169,6 +169,8 @@
 <div class="section" id="testing-tablib">
 <span id="testing"></span><h2>Testing Tablib<a class="headerlink" href="#testing-tablib" title="Permalink to this headline">¶</a></h2>
 <p>Testing is crucial to Tablib&#8217;s stability. This stable project is used in production by many companies and developers, so it is important to be certian that every version released is fully operational. When developing a new feature for Tablib, be sure to write proper tests for it as well.</p>
+<div class="section" id="running-the-test-suite">
+<h3>Running the Test Suite<a class="headerlink" href="#running-the-test-suite" title="Permalink to this headline">¶</a></h3>
 <p>When developing a feature for Tablib, the easiest way to test your changes for potential issues is to simply run the test suite directly.</p>
 <div class="highlight-python"><pre>$ ./test_tablib.py</pre>
 </div>
@@ -180,16 +182,23 @@
 <div class="highlight-python"><pre>$ nosetests test_tablib.py --with-xunit</pre>
 </div>
 <p>This will generate a <strong>nosetests.xml</strong> file, which can then be analyzed.</p>
+</div>
+<div class="section" id="extending-the-test-suite">
+<h3>Extending the Test Suite<a class="headerlink" href="#extending-the-test-suite" title="Permalink to this headline">¶</a></h3>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tablib.formats.sql.test_sql</span>
 </pre></div>
 </div>
+<div class="section" id="continuous-integration">
+<span id="hudson"></span><h4>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h4>
 <p>Every commit made to the <strong>develop</strong> branch is automatically tested and inspected upon receipt with <a class="reference external" href="http://hudson.dev.java.net">Hudson CI</a>. If you have access to the main respository and broke the build, you will receive an email accordingly.</p>
 <p>Anyone may view the build status and history at any time.</p>
 <blockquote>
 <a class="reference external" href="http://git.kennethreitz.com/ci/">http://git.kennethreitz.com/ci/</a></blockquote>
 <p>If you are trustworthy and plan to contribute to tablib on a regular basis, please contact <a class="reference external" href="http://kennethreitz.com/contact-me/">Kenneth Reitz</a> to get an account on the Hudson Server.</p>
 <p>Additional reports will also be included here in the future, including <span class="target" id="index-1"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0008"><strong>PEP 8</strong></a> checks and stress reports for extremely large datasets.</p>
+</div>
+</div>
 </div>
 <div class="section" id="building-the-docs">
 <span id="docs"></span><h2>Building the Docs<a class="headerlink" href="#building-the-docs" title="Permalink to this headline">¶</a></h2>
@@ -240,7 +249,14 @@ and <a class="reference external" href="http://github.com/michaeljones/sphinx-to
 <li><a class="reference internal" href="#coding-by-convention">Coding by Convention</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#testing-tablib">Testing Tablib</a></li>
+<li><a class="reference internal" href="#testing-tablib">Testing Tablib</a><ul>
+<li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a></li>
+<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a><ul>
+<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#building-the-docs">Building the Docs</a></li>
 </ul>
 </li>
