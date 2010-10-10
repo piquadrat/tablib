@@ -165,18 +165,20 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="p">[</span><span class="n">random_grade</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Let&#8217;s have a look at our data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
-<span class="go">- [Reitz, Kenneth, 22, 0.83]</span>
-<span class="go">- [Monke, Bessie, 21, 0.73]</span>
-</pre></div>
-</div>
 <dl class="docutils">
 <dt>Now we can add our headers back. ::</dt>
 <dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">_headers</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;Random&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd>
+</dl>
+<p>Let&#8217;s have a look at our data.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
+<span class="go">- {Age: 22, First Name: Kenneth, Grade: 0.6, Last Name: Reitz}</span>
+<span class="go">- {Age: 21, First Name: Bessie, Grade: 0.75, Last Name: Monke}</span>
+</pre></div>
+</div>
+<dl class="docutils">
 <dt>Let&#8217;s delete that column.  ::</dt>
 <dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Grade&#39;</span><span class="p">]</span>
 </pre></div>
