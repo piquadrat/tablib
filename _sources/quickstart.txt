@@ -216,11 +216,12 @@ Adding this function to our dataset would result in: ::
 
 .. _seperators:
 
+----------
 Seperators
 ----------
 
 
-
+-------------
 Transposition
 -------------
 
@@ -230,6 +231,7 @@ Thanks to Luca Beltrame, :class:`Dataset` objects
     data.transpose()
 
 
+---------
 Shortcuts
 ---------
 
