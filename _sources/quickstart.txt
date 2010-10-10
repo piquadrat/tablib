@@ -13,14 +13,10 @@ First, make sure that:
 * Tablib is :ref:`up-to-date <updates>`
 
 
-
-Basic Usage
------------
-
 Lets gets started with some simple use cases and examples.
 
 Creating a Dataset
-++++++++++++++++++
+------------------
 
 A :class:`Dataset <tablib.Dataset>` is nothing more than what its name implies—a set of data.
 
@@ -36,7 +32,7 @@ You can now start filling this :class:`Dataset <tablib.Dataset>` object with dat
 
 
 Adding Rows
-+++++++++++
+-----------
 
 Let's say you want to collect a simple list of names. ::
 
@@ -57,7 +53,7 @@ You can get a nice, Pythonic view of the dataset at any time with :class:`Datase
 
 
 Adding Headers
-++++++++++++++
+--------------
 
 It's time enhance our :class:`Dataset` by giving our columns some titles. To do so, set :class:`Dataset.headers`. ::
 
@@ -70,64 +66,103 @@ Let's view the data in YAML this time. ::
     - {First Name: Bessie, Last Name: Monke}
     
 
-Adding Columns
-++++++++++++++
+Adding Columns 
+--------------
 
 Now that we have a basic :class:`Dataset` in place, let's add a column of **ages** to it. ::
 
-    data.append(col=['Age', 22, 21])
+    data.append(col=['Age', 22, 20])
     
 Let's view the data in CSV this time. ::
 
     >>> data.csv
     Last Name,First Name,Age 
     Reitz,Kenneth,22 
-    Monke,Bessie,21 
+    Monke,Bessie,20
 
 It's that easy.
 
-Selecting Rows
-++++++++++++++
+Selecting Rows & Columns
+------------------------
 
-If we had a set of data consisting of thousands of rows, it would be useful to get a list of values in a column.
-To do so, we access the :class:`Dataset` as if it were a standard Python dictionary. ::
+You can slice and dice your data, just like a standard Python list. ::
 
-    
-
-Selecting Columns
-+++++++++++++++++
-
-::
-
-    data['Header Name']
+    >>> data[0]
+    ('Kenneth', 'Reitz', 22)
 
 
+If we had a set of data consisting of thousands of rows, it could be useful to get a list of values in a column.
+To do so, we access the :class:`Dataset` as if it were a standard Python dictionary.  ::
+
+    >>> data['First Name']
+    ['Kenneth', 'Bessie']
+
+Let's find the average age. ::
+
+    >>> ages = data['Age']
+    >>> float(sum(ages)) / len(ages)
+    21.0
 
 
-
-Advanced Usage
---------------
 
 Dynamic Columns
-+++++++++++++++
+---------------
+
+.. versionadded:: 0.8.3
+
+Thanks to Josh Ourisman, Tablib now supports adding dynamic columns. A dynamic column is with a single callable object (*ie.* a function).
+For now, this is only supported on :class:`Dataset` objects that have no defined :class:`headers <Dataset.headers>`.
+
+So, let's save our headers for later, then remove them. ::
+
+    _headers = list(data.headers)
+    data.headers = None
+
+We can now add a dynamic column to our :class:`Dataset` object. In this example, we have a function that generates a random grade for our students. The first argument that is passed in to the given callable is the current row. ::
+
+    import random
+    
+    def random_grade(row):
+        """Returns a random integer for entry."""
+        return (random.randint(60,100)/100.0)
+    
+    data.append(col=[random_grade])
+
+
+Let's have a look at our data. ::
+
+    >>> data.yaml
+    - [Reitz, Kenneth, 22, 0.83]
+    - [Monke, Bessie, 21, 0.73]
+
+Now we can add our headers back.
+::
+    >>> data.headers = _headers + ['Random']
+
+Let's delete that column. 
+
+::
+    >>> del data['Grade']
+
 
 .. _seperators:
 
 Seperators
-++++++++++
+----------
 
 
 
 Transposition
-+++++++++++++
+-------------
 
+Thanks to Luca Beltrame, :class:`Dataset` objects 
 ::
 
     data.transpose()
 
 
 Shortcuts
-+++++++++
+---------
 
 Population upon instantiation.
 
