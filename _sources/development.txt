@@ -69,7 +69,9 @@ Feature / Hotfix / Release branches follow a `Successful Git Branching Model`_ .
 ``gh-pages``
     Current release of http://tablib.org.
 
-When submitting patches, please put your feature/change in its own branch prior to opening a pull reqeust on GitHub_.
+Each release is tagged.
+
+When submitting patches, please place your feature/change in its own branch prior to opening a pull reqeust on GitHub_.
 
 
 .. _Git: http://git-scm.org
@@ -95,7 +97,7 @@ Coding by Convention
 
 Tablib features a micro-framework for adding format support. The easiest way to understand it is to use it. So, let's define our own format, named *xxx*.
 
-1. Write your format interface
+1. Write a new format interface.
 
     :class:`tablib.core` follows a simple pattern for automatically utilizing your format throughout Tablib. Function names are crucial.
     
@@ -126,7 +128,7 @@ Tablib features a micro-framework for adding format support. The easiest way to 
 .. admonition:: Excluding Support
 
 
-    If the format excludes support for :class:`Databook <tablib.Databook>` (*eg.* :class:`csv <tablib.Dataset.csv>` excludes :class:`Databook` support), simply don't define the respecive functions. Appropriate errors will be raised.
+    If the format excludes support for an import/export mechanism (*eg.* :class:`csv <tablib.Dataset.csv>` excludes :class:`Databook <tablib.Databook>` support), simply don't define the respecive functions. Appropriate errors will be raised.
 
 2. 
 

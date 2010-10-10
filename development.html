@@ -113,7 +113,8 @@
 <dt><tt class="docutils literal"><span class="pre">gh-pages</span></tt></dt>
 <dd>Current release of <a class="reference external" href="http://tablib.org">http://tablib.org</a>.</dd>
 </dl>
-<p>When submitting patches, please put your feature/change in its own branch prior to opening a pull reqeust on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a>.</p>
+<p>Each release is tagged.</p>
+<p>When submitting patches, please place your feature/change in its own branch prior to opening a pull reqeust on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a>.</p>
 </div>
 </div>
 <div class="section" id="adding-new-formats">
@@ -128,7 +129,7 @@
 <h3>Coding by Convention<a class="headerlink" href="#coding-by-convention" title="Permalink to this headline">¶</a></h3>
 <p>Tablib features a micro-framework for adding format support. The easiest way to understand it is to use it. So, let&#8217;s define our own format, named <em>xxx</em>.</p>
 <ol class="arabic">
-<li><p class="first">Write your format interface</p>
+<li><p class="first">Write a new format interface.</p>
 <blockquote>
 <p><tt class="xref py py-class docutils literal"><span class="pre">tablib.core</span></tt> follows a simple pattern for automatically utilizing your format throughout Tablib. Function names are crucial.</p>
 <p>Example <strong>tablib/formats/_xxx.py</strong>:</p>
@@ -160,7 +161,7 @@
 </ol>
 <div class="admonition-excluding-support admonition ">
 <p class="first admonition-title">Excluding Support</p>
-<p class="last">If the format excludes support for <a class="reference internal" href="api.html#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a> (<em>eg.</em> <a class="reference internal" href="api.html#tablib.Dataset.csv" title="tablib.Dataset.csv"><tt class="xref py py-class docutils literal"><span class="pre">csv</span></tt></a> excludes <tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt> support), simply don&#8217;t define the respecive functions. Appropriate errors will be raised.</p>
+<p class="last">If the format excludes support for an import/export mechanism (<em>eg.</em> <a class="reference internal" href="api.html#tablib.Dataset.csv" title="tablib.Dataset.csv"><tt class="xref py py-class docutils literal"><span class="pre">csv</span></tt></a> excludes <a class="reference internal" href="api.html#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a> support), simply don&#8217;t define the respecive functions. Appropriate errors will be raised.</p>
 </div>
 <ol class="arabic simple" start="2">
 <li>Add your new format module to the <tt class="xref py py-class docutils literal"><span class="pre">tablib.formats.avalable</span></tt> tuple.</li>
