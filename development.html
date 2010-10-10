@@ -56,8 +56,8 @@
             
   <div class="section" id="development">
 <span id="id1"></span><h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<p>Tablib is under active development, and welcome to contributors.</p>
-<p>If you have a feature request, suggestion, or bug report, please open a new issue on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a></p>
+<p>Tablib is under active development, and contributors are welcome.</p>
+<p>If you have a feature request, suggestion, or bug report, please open a new issue on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a>. To submit patches, please send a pull request on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a>.</p>
 <p>If you&#8217;d like to contribute, there&#8217;s plenty to do. Here&#8217;s a short todo list.</p>
 <blockquote>
 <ul class="simple">
@@ -71,7 +71,6 @@
 <li><tt class="docutils literal"><span class="pre">Dataset.traspose()</span></tt> support</li>
 </ul>
 </blockquote>
-<p>To submit patches, please send a pull request on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a>.</p>
 <div class="section" id="design-considerations">
 <span id="design"></span><h2>Design Considerations<a class="headerlink" href="#design-considerations" title="Permalink to this headline">¶</a></h2>
 <p>Tablib was developed with a few <span class="target" id="index-0"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0020"><strong>PEP 20</strong></a> idioms in mind.</p>
@@ -82,12 +81,16 @@
 <li>Complex is better than complicated.</li>
 <li>Readability counts.</li>
 </ol>
-<p>It strives to be as simple to use as possible.</p>
+<p>A few other things to keep in mind:</p>
+<ol class="arabic simple">
+<li>Keep your code DRY.</li>
+<li>Strive to be as simple (to use) as possible.</li>
+</ol>
 </div>
 <div class="section" id="source-control">
 <span id="scm"></span><h2>Source Control<a class="headerlink" href="#source-control" title="Permalink to this headline">¶</a></h2>
 <p>Tablib source is controlled with <a class="reference external" href="http://git-scm.org">Git</a>, the lean, mean, distributed source control machine.</p>
-<p>The repository is publicly accessable:</p>
+<p>The repository is publicly accessable.</p>
 <blockquote>
 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git://github.com/kennethreitz/tablib.git</span></tt></blockquote>
 <p>The project is hosted both on <strong>GitHub</strong> and <strong>git.kennethreitz.com</strong>.</p>
@@ -123,7 +126,7 @@
 </ul>
 <div class="section" id="coding-by-convention">
 <h3>Coding by Convention<a class="headerlink" href="#coding-by-convention" title="Permalink to this headline">¶</a></h3>
-<p>Tablib features a micro-framework for adding format support. The easiest way to understand it is to use it. so, let&#8217;s define our own format called <em>xxx</em>.</p>
+<p>Tablib features a micro-framework for adding format support. The easiest way to understand it is to use it. So, let&#8217;s define our own format, named <em>xxx</em>.</p>
 <ol class="arabic">
 <li><p class="first">Write your format interface</p>
 <blockquote>
@@ -169,8 +172,6 @@
 <div class="section" id="testing-tablib">
 <span id="testing"></span><h2>Testing Tablib<a class="headerlink" href="#testing-tablib" title="Permalink to this headline">¶</a></h2>
 <p>Testing is crucial to Tablib&#8217;s stability. This stable project is used in production by many companies and developers, so it is important to be certian that every version released is fully operational. When developing a new feature for Tablib, be sure to write proper tests for it as well.</p>
-<div class="section" id="running-the-test-suite">
-<h3>Running the Test Suite<a class="headerlink" href="#running-the-test-suite" title="Permalink to this headline">¶</a></h3>
 <p>When developing a feature for Tablib, the easiest way to test your changes for potential issues is to simply run the test suite directly.</p>
 <div class="highlight-python"><pre>$ ./test_tablib.py</pre>
 </div>
@@ -183,22 +184,14 @@
 </div>
 <p>This will generate a <strong>nosetests.xml</strong> file, which can then be analyzed.</p>
 </div>
-<div class="section" id="extending-the-test-suite">
-<h3>Extending the Test Suite<a class="headerlink" href="#extending-the-test-suite" title="Permalink to this headline">¶</a></h3>
-<p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tablib.formats.sql.test_sql</span>
-</pre></div>
-</div>
 <div class="section" id="continuous-integration">
-<span id="hudson"></span><h4>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h4>
+<span id="hudson"></span><h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
 <p>Every commit made to the <strong>develop</strong> branch is automatically tested and inspected upon receipt with <a class="reference external" href="http://hudson.dev.java.net">Hudson CI</a>. If you have access to the main respository and broke the build, you will receive an email accordingly.</p>
 <p>Anyone may view the build status and history at any time.</p>
 <blockquote>
 <a class="reference external" href="http://git.kennethreitz.com/ci/">http://git.kennethreitz.com/ci/</a></blockquote>
 <p>If you are trustworthy and plan to contribute to tablib on a regular basis, please contact <a class="reference external" href="http://kennethreitz.com/contact-me/">Kenneth Reitz</a> to get an account on the Hudson Server.</p>
 <p>Additional reports will also be included here in the future, including <span class="target" id="index-1"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0008"><strong>PEP 8</strong></a> checks and stress reports for extremely large datasets.</p>
-</div>
-</div>
 </div>
 <div class="section" id="building-the-docs">
 <span id="docs"></span><h2>Building the Docs<a class="headerlink" href="#building-the-docs" title="Permalink to this headline">¶</a></h2>
@@ -249,14 +242,8 @@ and <a class="reference external" href="http://github.com/michaeljones/sphinx-to
 <li><a class="reference internal" href="#coding-by-convention">Coding by Convention</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#testing-tablib">Testing Tablib</a><ul>
-<li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a></li>
-<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a><ul>
+<li><a class="reference internal" href="#testing-tablib">Testing Tablib</a></li>
 <li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li><a class="reference internal" href="#building-the-docs">Building the Docs</a></li>
 </ul>
 </li>

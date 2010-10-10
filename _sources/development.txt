@@ -3,15 +3,14 @@
 Development
 ===========
 
-Tablib is under active development, and welcome to contributors.
+Tablib is under active development, and contributors are welcome.
 
-If you have a feature request, suggestion, or bug report, please open a new issue on GitHub_
+If you have a feature request, suggestion, or bug report, please open a new issue on GitHub_. To submit patches, please send a pull request on GitHub_.
 
 If you'd like to contribute, there's plenty to do. Here's a short todo list.
 
     .. include:: ../TODO.rst
 
-To submit patches, please send a pull request on GitHub_.
 
 .. _GitHub: http://github.com/kennethreitz/tablib/
 
@@ -31,8 +30,10 @@ Tablib was developed with a few :pep:`20` idioms in mind.
 #. Complex is better than complicated.
 #. Readability counts.
 
-It strives to be as simple to use as possible.
+A few other things to keep in mind:
 
+#. Keep your code DRY.
+#. Strive to be as simple (to use) as possible.
 
 .. _scm:
 
@@ -43,7 +44,7 @@ Source Control
 
 Tablib source is controlled with Git_, the lean, mean, distributed source control machine.
 
-The repository is publicly accessable:
+The repository is publicly accessable.
 
     ``git clone git://github.com/kennethreitz/tablib.git``
     
@@ -92,7 +93,7 @@ Tablib welcomes new format additions! Format suggestions include:
 Coding by Convention
 ++++++++++++++++++++
 
-Tablib features a micro-framework for adding format support. The easiest way to understand it is to use it. so, let's define our own format called *xxx*.
+Tablib features a micro-framework for adding format support. The easiest way to understand it is to use it. So, let's define our own format, named *xxx*.
 
 1. Write your format interface
 
@@ -144,11 +145,6 @@ Testing Tablib
 
 Testing is crucial to Tablib's stability. This stable project is used in production by many companies and developers, so it is important to be certian that every version released is fully operational. When developing a new feature for Tablib, be sure to write proper tests for it as well.
 
-
-Running the Test Suite
-++++++++++++++++++++++
-
-
 When developing a feature for Tablib, the easiest way to test your changes for potential issues is to simply run the test suite directly. ::
 
 	$ ./test_tablib.py
@@ -170,17 +166,9 @@ This will generate a **nosetests.xml** file, which can then be analyzed.
 
 
 
-Extending the Test Suite
-++++++++++++++++++++++++
-
-
-Example: ::
-
-	import tablib.formats.sql.test_sql
-
-
 .. _hudson:
 
+----------------------
 Continuous Integration
 ----------------------
 
