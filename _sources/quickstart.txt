@@ -110,7 +110,7 @@ Dynamic Columns
 
 .. versionadded:: 0.8.3
 
-Thanks to Josh Ourisman, Tablib now supports adding dynamic columns. A dynamic column is with a single callable object (*ie.* a function).
+Thanks to Josh Ourisman, Tablib now supports adding dynamic columns. A dynamic column is a single callable object (*ie.* a function).
 For now, this is only supported on :class:`Dataset` objects that have no defined :class:`headers <Dataset.headers>`.
 
 So, let's save our headers for later, then remove them. ::
@@ -135,13 +135,10 @@ Let's have a look at our data. ::
     - [Reitz, Kenneth, 22, 0.83]
     - [Monke, Bessie, 21, 0.73]
 
-Now we can add our headers back.
-::
+Now we can add our headers back. ::
     >>> data.headers = _headers + ['Random']
 
-Let's delete that column. 
-
-::
+Let's delete that column.  ::
     >>> del data['Grade']
 
 

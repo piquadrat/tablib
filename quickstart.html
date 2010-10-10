@@ -148,7 +148,7 @@ To do so, we access the <a class="reference internal" href="api.html#tablib.Data
 <h2>Dynamic Columns<a class="headerlink" href="#dynamic-columns" title="Permalink to this headline">¶</a></h2>
 <p class="versionadded">
 <span class="versionmodified">New in version 0.8.3.</span></p>
-<p>Thanks to Josh Ourisman, Tablib now supports adding dynamic columns. A dynamic column is with a single callable object (<em>ie.</em> a function).
+<p>Thanks to Josh Ourisman, Tablib now supports adding dynamic columns. A dynamic column is a single callable object (<em>ie.</em> a function).
 For now, this is only supported on <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> objects that have no defined <a class="reference internal" href="api.html#tablib.Dataset.headers" title="tablib.Dataset.headers"><tt class="xref py py-class docutils literal"><span class="pre">headers</span></tt></a>.</p>
 <p>So, let&#8217;s save our headers for later, then remove them.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">_headers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
@@ -171,13 +171,13 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <span class="go">- [Monke, Bessie, 21, 0.73]</span>
 </pre></div>
 </div>
-<p>Now we can add our headers back.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">_headers</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;Random&#39;</span><span class="p">]</span>
+<dl class="docutils">
+<dt>Now we can add our headers back. ::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">_headers</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;Random&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Let&#8217;s delete that column.</p>
-<dl class="docutils">
-<dt>::</dt>
+</dd>
+<dt>Let&#8217;s delete that column.  ::</dt>
 <dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Grade&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
