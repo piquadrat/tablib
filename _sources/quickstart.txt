@@ -184,9 +184,6 @@ Let's remove that column.  ::
     >>> del data['Grade']
 
 
-Advanced Usage
-++++++++++++++
-
 When you add a dynamic column, the first argument that is passed in to the given callable is the current data row. You can use this to perform calculations against your data row. 
 
 For example, we can use the data available in the row to guess the gender of a student. ::

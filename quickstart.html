@@ -187,8 +187,6 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Grade&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="section" id="id2">
-<h3>Advanced Usage<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>When you add a dynamic column, the first argument that is passed in to the given callable is the current data row. You can use this to perform calculations against your data row.</p>
 <p>For example, we can use the data available in the row to guess the gender of a student.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">guess_gender</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -213,9 +211,8 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="seperators">
-<span id="id3"></span><h2>Seperators<a class="headerlink" href="#seperators" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Seperators<a class="headerlink" href="#seperators" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="transposition">
 <h2>Transposition<a class="headerlink" href="#transposition" title="Permalink to this headline">¶</a></h2>
@@ -249,10 +246,7 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 </ul>
 </li>
 <li><a class="reference internal" href="#advanced-usage">Advanced Usage</a><ul>
-<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a><ul>
-<li><a class="reference internal" href="#id2">Advanced Usage</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a></li>
 <li><a class="reference internal" href="#seperators">Seperators</a></li>
 <li><a class="reference internal" href="#transposition">Transposition</a></li>
 <li><a class="reference internal" href="#shortcuts">Shortcuts</a></li>
