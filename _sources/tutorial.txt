@@ -131,7 +131,9 @@ Let's find the average age. ::
 Removing Rows & Columns
 -----------------------
 
+data.insert('MI', )
 
+>>> del data['Row Name']
 Fucking easy.
 
 
@@ -215,16 +217,7 @@ Adding this function to our dataset as a dynamic column would result in: ::
 ----------
 Seperators
 ----------
-
-
--------------
-Transposition
--------------
-
-Thanks to Luca Beltrame, :class:`Dataset` objects 
-::
-
-    data.transpose()
+.. versionadded:: 0.8.3
 
 
 ---------
