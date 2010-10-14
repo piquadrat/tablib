@@ -116,7 +116,7 @@
 </div>
 <p>Let&#8217;s view the data now.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">dict</span>
-<span class="go">[{&#39;Last Name&#39;: &#39;Reitz&#39;, &#39;First Name&#39;: &#39;Kenneth&#39;, &#39;Age&#39;: 22}, {&#39;Last Name&#39;: &#39;Monke&#39;, &#39;First Name&#39;: &#39;Bessie&#39;, &#39;Age&#39;: 21}]</span>
+<span class="go">[{&#39;Last Name&#39;: &#39;Reitz&#39;, &#39;First Name&#39;: &#39;Kenneth&#39;, &#39;Age&#39;: 22}, {&#39;Last Name&#39;: &#39;Monke&#39;, &#39;First Name&#39;: &#39;Bessie&#39;, &#39;Age&#39;: 20}]</span>
 </pre></div>
 </div>
 <p>It&#8217;s that easy.</p>
@@ -128,18 +128,18 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">csv</span>
 <span class="go">Last Name,First Name,Age</span>
 <span class="go">Reitz,Kenneth,22</span>
-<span class="go">Monke,Bessie,21</span>
+<span class="go">Monke,Bessie,20</span>
 </pre></div>
 </div>
 <p><strong>JavaScript Object Notation</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">json</span>
-<span class="go">[{&quot;Last Name&quot;: &quot;Reitz&quot;, &quot;First Name&quot;: &quot;Kenneth&quot;, &quot;Age&quot;: 22}, {&quot;Last Name&quot;: &quot;Monke&quot;, &quot;First Name&quot;: &quot;Bessie&quot;, &quot;Age&quot;: 21}]</span>
+<span class="go">[{&quot;Last Name&quot;: &quot;Reitz&quot;, &quot;First Name&quot;: &quot;Kenneth&quot;, &quot;Age&quot;: 22}, {&quot;Last Name&quot;: &quot;Monke&quot;, &quot;First Name&quot;: &quot;Bessie&quot;, &quot;Age&quot;: 20}]</span>
 </pre></div>
 </div>
 <p><strong>YAML Ain&#8217;t Markup Language</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
 <span class="go">- {Age: 22, First Name: Kenneth, Last Name: Reitz}</span>
-<span class="go">- {Age: 21, First Name: Bessie, Last Name: Monke}</span>
+<span class="go">- {Age: 20, First Name: Bessie, Last Name: Monke}</span>
 </pre></div>
 </div>
 <p><strong>Microsoft Excel</strong></p>
@@ -211,7 +211,7 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <p>Let&#8217;s have a look at our data.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
 <span class="go">- {Age: 22, First Name: Kenneth, Grade: 0.6, Last Name: Reitz}</span>
-<span class="go">- {Age: 21, First Name: Bessie, Grade: 0.75, Last Name: Monke}</span>
+<span class="go">- {Age: 20, First Name: Bessie, Grade: 0.75, Last Name: Monke}</span>
 </pre></div>
 </div>
 <p>Let&#8217;s remove that column.</p>
@@ -238,7 +238,7 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <p>Adding this function to our dataset as a dynamic column would result in:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">yaml</span>
 <span class="go">- {Age: 22, First Name: Kenneth, Gender: Male, Last Name: Reitz}</span>
-<span class="go">- {Age: 21, First Name: Bessie, Gender: Female, Last Name: Monke}</span>
+<span class="go">- {Age: 20, First Name: Bessie, Gender: Female, Last Name: Monke}</span>
 </pre></div>
 </div>
 <div class="section" id="excel-workbook-with-multiple-sheets">
