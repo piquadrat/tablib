@@ -203,6 +203,20 @@ been set, a JSON list of lists (rows) will be returned instead.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="tablib.Dataset.tsv">
+<tt class="descname">tsv</tt><a class="headerlink" href="#tablib.Dataset.tsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>A TSV representation of the <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object. The top row will contain 
+headers, if they have been set. Otherwise, the top row will contain 
+the first row of the dataset.</p>
+<p>A dataset object can also be imported by setting the <a class="reference internal" href="#tablib.Dataset.csv" title="tablib.Dataset.csv"><tt class="xref py py-class docutils literal"><span class="pre">Dataset.csv</span></tt></a> attribute.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">tsv</span> <span class="o">=</span> <span class="s">&#39;age first_name      last_name</span><span class="se">\n</span><span class="s">90   John    Adams&#39;</span>
+</pre></div>
+</div>
+<p>Import assumes (for now) that headers exist.</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="tablib.Dataset.width">
 <tt class="descname">width</tt><a class="headerlink" href="#tablib.Dataset.width" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of columns currently in the <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a>.
