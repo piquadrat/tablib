@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Quickstart &mdash; Tablib v0.8.5 documentation</title>
+    <title>Quickstart &mdash; Tablib v0.9.0 documentation</title>
     <link rel="stylesheet" href="static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.8.5',
+        VERSION:     '0.9.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,7 +21,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="Tablib v0.8.5 documentation" href="index.html" />
+    <link rel="top" title="Tablib v0.9.0 documentation" href="index.html" />
     <link rel="next" title="Development" href="development.html" />
     <link rel="prev" title="Installation" href="install.html" />
    
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="install.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Tablib v0.8.5 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Tablib v0.9.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -170,13 +170,13 @@ To do so, we access the <a class="reference internal" href="api.html#tablib.Data
 </div>
 <div class="section" id="removing-rows-columns">
 <h2>Removing Rows &amp; Columns<a class="headerlink" href="#removing-rows-columns" title="Permalink to this headline">¶</a></h2>
+<p>It&#8217;s easier than you could imagine.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Col Name&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Fucking easy.</p>
 </div>
 </div>
 <div class="section" id="advanced-usage">
@@ -184,28 +184,18 @@ To do so, we access the <a class="reference internal" href="api.html#tablib.Data
 <p>This part of the documentation services to give you an idea that are otherwise hard to extract from the <a class="reference internal" href="api.html#api"><em>API Documentation</em></a></p>
 <p>And now for something completely different.</p>
 <div class="section" id="dynamic-columns">
-<h2>Dynamic Columns<a class="headerlink" href="#dynamic-columns" title="Permalink to this headline">¶</a></h2>
+<span id="dyncols"></span><h2>Dynamic Columns<a class="headerlink" href="#dynamic-columns" title="Permalink to this headline">¶</a></h2>
 <p class="versionadded">
 <span class="versionmodified">New in version 0.8.3.</span></p>
-<p>Thanks to Josh Ourisman, Tablib now supports adding dynamic columns. A dynamic column is a single callable object (<em>ie.</em> a function).
-For now, this is only supported on <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> objects that have no defined <a class="reference internal" href="api.html#tablib.Dataset.headers" title="tablib.Dataset.headers"><tt class="xref py py-class docutils literal"><span class="pre">headers</span></tt></a>.</p>
-<p>So, let&#8217;s save our headers for later, then remove them.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">_headers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="bp">None</span>
-</pre></div>
-</div>
-<p>We can now add a dynamic column to our <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object. In this example, we have a function that generates a random grade for our students.</p>
+<p>Thanks to Josh Ourisman, Tablib now supports adding dynamic columns. A dynamic column is a single callable object (<em>ie.</em> a function).</p>
+<p>Let&#8217;s add a dynamic column to our <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object. In this example, we have a function that generates a random grade for our students.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">random_grade</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns a random integer for entry.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
 
-<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="p">[</span><span class="n">random_grade</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>Now add the headers back, with our new column.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">_headers</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;Grade&#39;</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="p">[</span><span class="n">random_grade</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="s">&#39;Grade&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Let&#8217;s have a look at our data.</p>
@@ -241,12 +231,37 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 <span class="go">- {Age: 20, First Name: Bessie, Gender: Female, Last Name: Monke}</span>
 </pre></div>
 </div>
-<div class="section" id="excel-workbook-with-multiple-sheets">
-<h3>Excel Workbook With Multiple Sheets<a class="headerlink" href="#excel-workbook-with-multiple-sheets" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="api.html#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">book</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Databook</span><span class="p">([</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="p">])</span>
+</div>
+<div class="section" id="filtering-datasets-with-tags">
+<span id="tags"></span><h2>Filtering Datasets with Tags<a class="headerlink" href="#filtering-datasets-with-tags" title="Permalink to this headline">¶</a></h2>
+<p class="versionadded">
+<span class="versionmodified">New in version 0.9.0.</span></p>
+<p>When constructing a <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object, you can add tags to rows by speficying the <tt class="docutils literal"><span class="pre">tags</span></tt> parameter.
+This allows you to filter your <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> later. This can be useful so seperate rows of data based on
+arbitrary criteria (<em>e.g.</em> origin) that you don&#8217;t want to include in your <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a>.</p>
+<p>Let&#8217;s tag some students.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">students</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+
+<span class="n">students</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;first&#39;</span><span class="p">,</span> <span class="s">&#39;last&#39;</span><span class="p">]</span>
+
+<span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s">&#39;Kenneth&#39;</span><span class="p">,</span> <span class="s">&#39;Reitz&#39;</span><span class="p">],</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;male&#39;</span><span class="p">,</span> <span class="s">&#39;technical&#39;</span><span class="p">])</span>
+<span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s">&#39;Bessie&#39;</span><span class="p">,</span> <span class="s">&#39;Monke&#39;</span><span class="p">],</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;female&#39;</span><span class="p">,</span> <span class="s">&#39;creative&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+<p>Now that we have extra meta-data on our rows, we can use easily filter our <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a>. Let&#8217;s just see Male students.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="s">&#39;male&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">yaml</span>
+<span class="go">- {first: Kenneth, Last: Reitz}</span>
+</pre></div>
+</div>
+<p>It&#8217;s that simple. The original <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> is untouched.</p>
+<div class="section" id="excel-workbook-with-multiple-sheets">
+<h3>Excel Workbook With Multiple Sheets<a class="headerlink" href="#excel-workbook-with-multiple-sheets" title="Permalink to this headline">¶</a></h3>
+<p>When dealine with a large number of <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Datasets</span></tt></a> in spreadsheet format, it&#8217;s quite common to group mulitple spreadsheets into a single Excel file, known as a Workbook. Tablib makes it extremely easy to build webooks with the handy, <a class="reference internal" href="api.html#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a> class.</p>
+<p>Let&#8217;s say we have 3 different <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Datasets</span></tt></a>. All we have to do is add then to a <a class="reference internal" href="api.html#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a> object...</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">book</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Databook</span><span class="p">([</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">data3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>... and export to Excel just like <a class="reference internal" href="api.html#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Datasets</span></tt></a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;students.xls&#39;</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">xls</span><span class="p">)</span>
 </pre></div>
@@ -339,7 +354,8 @@ For now, this is only supported on <a class="reference internal" href="api.html#
 </ul>
 </li>
 <li><a class="reference internal" href="#advanced-usage">Advanced Usage</a><ul>
-<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a><ul>
+<li><a class="reference internal" href="#dynamic-columns">Dynamic Columns</a></li>
+<li><a class="reference internal" href="#filtering-datasets-with-tags">Filtering Datasets with Tags</a><ul>
 <li><a class="reference internal" href="#excel-workbook-with-multiple-sheets">Excel Workbook With Multiple Sheets</a></li>
 </ul>
 </li>
