@@ -2,13 +2,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Development &mdash; Tablib v0.9.2 documentation</title>
+    <title>Development &mdash; Tablib 0.9.2 documentation</title>
+    
     <link rel="stylesheet" href="static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -21,7 +24,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="Tablib v0.9.2 documentation" href="index.html" />
+    <link rel="top" title="Tablib 0.9.2 documentation" href="index.html" />
     <link rel="next" title="API" href="api.html" />
     <link rel="prev" title="Quickstart" href="tutorial.html" />
    
@@ -45,7 +48,7 @@
         <li class="right" >
           <a href="tutorial.html" title="Quickstart"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Tablib v0.9.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Tablib 0.9.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -60,17 +63,22 @@
 <p>If you have a feature request, suggestion, or bug report, please open a new issue on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a>. To submit patches, please send a pull request on <a class="reference external" href="http://github.com/kennethreitz/tablib/">GitHub</a>.</p>
 <p>If you&#8217;d like to contribute, there&#8217;s plenty to do. Here&#8217;s a short todo list.</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
+<li>Add seperator support to HTML out</li>
+<li>Hooks System
+- pre/post-append
+- pre/post-import
+- pre/post-export</li>
+<li>Big Data</li>
 <li>Backwards-compatible OrderedDict support</li>
 <li>Write more exhausive unit-tests.</li>
 <li>Write stress tests.</li>
 <li>Make CSV write customizable.</li>
-<li>HTML Table exports.</li>
 <li>Integrate django-tablib</li>
 <li>Mention django-tablib in Documention</li>
 <li>Dataset title usage in documentation (#17)</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <div class="section" id="design-considerations">
 <span id="design"></span><h2>Design Considerations<a class="headerlink" href="#design-considerations" title="Permalink to this headline">¶</a></h2>
 <p>Tablib was developed with a few <span class="target" id="index-0"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0020"><strong>PEP 20</strong></a> idioms in mind.</p>
@@ -92,16 +100,16 @@
 <p>Tablib source is controlled with <a class="reference external" href="http://git-scm.org">Git</a>, the lean, mean, distributed source control machine.</p>
 <p>The repository is publicly accessable.</p>
 <blockquote>
-<tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git://github.com/kennethreitz/tablib.git</span></tt></blockquote>
+<div><tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git://github.com/kennethreitz/tablib.git</span></tt></div></blockquote>
 <p>The project is hosted both on <strong>GitHub</strong> and <strong>git.kennethreitz.com</strong>.</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt>GitHub:</dt>
 <dd><a class="reference external" href="http://github.com/kennethreitz/tablib">http://github.com/kennethreitz/tablib</a></dd>
 <dt>&#8220;Mirror&#8221;:</dt>
 <dd><a class="reference external" href="http://git.kennethreitz.com/projects/tablib">http://git.kennethreitz.com/projects/tablib</a></dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <div class="section" id="git-branch-structure">
 <h3>Git Branch Structure<a class="headerlink" href="#git-branch-structure" title="Permalink to this headline">¶</a></h3>
 <p>Feature / Hotfix / Release branches follow a <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">Successful Git Branching Model</a> . <a class="reference external" href="http://github.com/nvie/gitflow">Git-flow</a> is a great tool for managing the repository. I highly recommend it.</p>
@@ -131,7 +139,7 @@
 <ol class="arabic">
 <li><p class="first">Write a new format interface.</p>
 <blockquote>
-<p><tt class="xref py py-class docutils literal"><span class="pre">tablib.core</span></tt> follows a simple pattern for automatically utilizing your format throughout Tablib. Function names are crucial.</p>
+<div><p><tt class="xref py py-class docutils literal"><span class="pre">tablib.core</span></tt> follows a simple pattern for automatically utilizing your format throughout Tablib. Function names are crucial.</p>
 <p>Example <strong>tablib/formats/_xxx.py</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;xxx&#39;</span>
 
@@ -156,7 +164,7 @@
     <span class="c"># returns True if given stream is parsable as xxx</span>
 </pre></div>
 </div>
-</blockquote>
+</div></blockquote>
 </li>
 </ol>
 <div class="admonition-excluding-support admonition ">
@@ -190,7 +198,7 @@
 <p>Every commit made to the <strong>develop</strong> branch is automatically tested and inspected upon receipt with <a class="reference external" href="http://hudson.dev.java.net">Hudson CI</a>. If you have access to the main respository and broke the build, you will receive an email accordingly.</p>
 <p>Anyone may view the build status and history at any time.</p>
 <blockquote>
-<a class="reference external" href="http://git.kennethreitz.com/ci/">http://git.kennethreitz.com/ci/</a></blockquote>
+<div><a class="reference external" href="http://git.kennethreitz.com/ci/">http://git.kennethreitz.com/ci/</a></div></blockquote>
 <p>If you are trustworthy and plan to contribute to tablib on a regular basis, please contact <a class="reference external" href="http://kennethreitz.com/contact-me/">Kenneth Reitz</a> to get an account on the Hudson Server.</p>
 <p>Additional reports will also be included here in the future, including <span class="target" id="index-1"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0008"><strong>PEP 8</strong></a> checks and stress reports for extremely large datasets.</p>
 </div>
@@ -211,7 +219,7 @@ Documentation builds are powered by the powerful Pocoo project, <a class="refere
 <p>To push the documentation up to <a class="reference external" href="http://pages.github.com">GitHub Pages</a>, you will first need to run <a class="reference external" href="http://github.com/michaeljones/sphinx-to-github">sphinx-to-github</a> against your <tt class="docutils literal"><span class="pre">docs/_build/html</span></tt> directory.</p>
 <p>GitHub Pages are powered by an HTML generation system called <a class="reference external" href="http://github.com/mojombo/jekyll">Jeckyl</a>, which is configured to ignore files and folders that begin with &#8220;<tt class="docutils literal"><span class="pre">_</span></tt>&#8221; (<em>ie.</em> <strong>_static</strong>).</p>
 <blockquote>
-and <a class="reference external" href="http://github.com/michaeljones/sphinx-to-github">sphinx-to-github</a>.</blockquote>
+<div>and <a class="reference external" href="http://github.com/michaeljones/sphinx-to-github">sphinx-to-github</a>.</div></blockquote>
 <p>Installing sphinx-to-github is simple.</p>
 <div class="highlight-python"><pre>$ pip install sphinx-to-github</pre>
 </div>
@@ -279,7 +287,7 @@ and <a class="reference external" href="http://github.com/michaeljones/sphinx-to
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy; Copyright 2010, Kenneth Reitz. Styles (modified) &copy; Armin Ronacher.
+      &copy; Copyright 2011, Kenneth Reitz. Styles (modified) &copy; Armin Ronacher.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
     </div>
   </body>
