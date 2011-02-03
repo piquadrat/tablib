@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API &mdash; Tablib 0.9.2 documentation</title>
+    <title>API &mdash; Tablib 0.9.3 documentation</title>
     
     <link rel="stylesheet" href="static/flasky.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.2',
+        VERSION:     '0.9.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="Tablib 0.9.2 documentation" href="index.html" />
+    <link rel="top" title="Tablib 0.9.3 documentation" href="index.html" />
     <link rel="prev" title="Development" href="development.html" />
    
   
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="development.html" title="Development"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Tablib 0.9.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Tablib 0.9.3 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -161,6 +161,14 @@ that do not contain the given <a class="reference internal" href="tutorial.html#
 Cannot be directly modified.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="tablib.Dataset.html">
+<tt class="descname">html</tt><a class="headerlink" href="#tablib.Dataset.html" title="Permalink to this definition">¶</a></dt>
+<dd><p>A HTML table representation of the <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object. If
+headers have been set, they will be used as table headers.</p>
+<p>..notice:: This method can be used for export only.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="tablib.Dataset.insert">
 <tt class="descname">insert</tt><big>(</big><em>index</em>, <em>row=None</em>, <em>col=None</em>, <em>header=None</em>, <em>tags=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#tablib.Dataset.insert" title="Permalink to this definition">¶</a></dt>
@@ -204,6 +212,16 @@ been set, a JSON list of lists (rows) will be returned instead.</p>
 </pre></div>
 </div>
 <p>Import assumes (for now) that headers exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tablib.Dataset.sort">
+<tt class="descname">sort</tt><big>(</big><em>col</em>, <em>reverse=False</em><big>)</big><a class="headerlink" href="#tablib.Dataset.sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort a <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> by a specific column, given string (for
+header) or integer (for column index). The order can be reversed by
+setting <tt class="docutils literal"><span class="pre">reverse</span></tt> to <tt class="docutils literal"><span class="pre">True</span></tt>. 
+Returns a new <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> instance where columns have been
+sorted.</p>
 </dd></dl>
 
 <dl class="method">
@@ -292,7 +310,7 @@ been set, a YAML list of lists (rows) will be returned instead.</p>
 <h2>Databook Object<a class="headerlink" href="#databook-object" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="tablib.Databook">
-<em class="property">class </em><tt class="descclassname">tablib.</tt><tt class="descname">Databook</tt><big>(</big><em>sets=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#tablib.Databook" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">tablib.</tt><tt class="descname">Databook</tt><big>(</big><em>sets=None</em><big>)</big><a class="headerlink" href="#tablib.Databook" title="Permalink to this definition">¶</a></dt>
 <dd><p>A book of <a class="reference internal" href="#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> objects.</p>
 <dl class="method">
 <dt id="tablib.Databook.add_sheet">
