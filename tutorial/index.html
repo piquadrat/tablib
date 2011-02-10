@@ -127,7 +127,7 @@
 <div class="section" id="exporting-data">
 <h2>Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h2>
 <p>Tablib&#8217;s killer feature is the ability to export your <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> objects into a number of formats.</p>
-<p><strong>Comma-Seperated Values</strong></p>
+<p><strong>Comma-Separated Values</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">csv</span>
 <span class="go">Last Name,First Name,Age</span>
 <span class="go">Reitz,Kenneth,22</span>
@@ -240,7 +240,7 @@ To do so, we access the <a class="reference internal" href="../api/#tablib.Datas
 <p class="versionadded">
 <span class="versionmodified">New in version 0.9.0.</span></p>
 <p>When constructing a <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object, you can add tags to rows by specifying the <tt class="docutils literal"><span class="pre">tags</span></tt> parameter.
-This allows you to filter your <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> later. This can be useful so seperate rows of data based on
+This allows you to filter your <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> later. This can be useful so separate rows of data based on
 arbitrary criteria (<em>e.g.</em> origin) that you don&#8217;t want to include in your <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a>.</p>
 <p>Let&#8217;s tag some students.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">students</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
@@ -259,7 +259,7 @@ arbitrary criteria (<em>e.g.</em> origin) that you don&#8217;t want to include i
 <p>It&#8217;s that simple. The original <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> is untouched.</p>
 <div class="section" id="excel-workbook-with-multiple-sheets">
 <h3>Excel Workbook With Multiple Sheets<a class="headerlink" href="#excel-workbook-with-multiple-sheets" title="Permalink to this headline">¶</a></h3>
-<p>When dealine with a large number of <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Datasets</span></tt></a> in spreadsheet format, it&#8217;s quite common to group mulitple spreadsheets into a single Excel file, known as a Workbook. Tablib makes it extremely easy to build webooks with the handy, <a class="reference internal" href="../api/#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a> class.</p>
+<p>When dealing with a large number of <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Datasets</span></tt></a> in spreadsheet format, it&#8217;s quite common to group multiple spreadsheets into a single Excel file, known as a Workbook. Tablib makes it extremely easy to build webooks with the handy, <a class="reference internal" href="../api/#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a> class.</p>
 <p>Let&#8217;s say we have 3 different <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Datasets</span></tt></a>. All we have to do is add then to a <a class="reference internal" href="../api/#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a> object...</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">book</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Databook</span><span class="p">([</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">data3</span><span class="p">])</span>
 </pre></div>
@@ -269,7 +269,7 @@ arbitrary criteria (<em>e.g.</em> origin) that you don&#8217;t want to include i
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">xls</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The resulting <strong>students.xls</strong> file will contain a seperate spreadsheet for each <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object in the <a class="reference internal" href="../api/#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a>.</p>
+<p>The resulting <strong>students.xls</strong> file will contain a separate spreadsheet for each <a class="reference internal" href="../api/#tablib.Dataset" title="tablib.Dataset"><tt class="xref py py-class docutils literal"><span class="pre">Dataset</span></tt></a> object in the <a class="reference internal" href="../api/#tablib.Databook" title="tablib.Databook"><tt class="xref py py-class docutils literal"><span class="pre">Databook</span></tt></a>.</p>
 <div class="admonition-binary-warning admonition ">
 <p class="first admonition-title">Binary Warning</p>
 <p class="last">Make sure to open the output file in binary mode.</p>
@@ -280,7 +280,7 @@ arbitrary criteria (<em>e.g.</em> origin) that you don&#8217;t want to include i
 <span id="id2"></span><h2>Seperators<a class="headerlink" href="#seperators" title="Permalink to this headline">¶</a></h2>
 <p class="versionadded">
 <span class="versionmodified">New in version 0.8.2.</span></p>
-<p>When, it&#8217;s often useful to create a blank row containing information on the upcomming data. So,</p>
+<p>When, it&#8217;s often useful to create a blank row containing information on the upcoming data. So,</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">daniel_tests</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="s">&#39;11/24/09&#39;</span><span class="p">,</span> <span class="s">&#39;Math 101 Mid-term Exam&#39;</span><span class="p">,</span> <span class="mf">56.</span><span class="p">),</span>
     <span class="p">(</span><span class="s">&#39;05/24/10&#39;</span><span class="p">,</span> <span class="s">&#39;Math 101 Final Exam&#39;</span><span class="p">,</span> <span class="mf">62.</span><span class="p">)</span>
@@ -331,7 +331,7 @@ arbitrary criteria (<em>e.g.</em> origin) that you don&#8217;t want to include i
 </div></blockquote>
 <div class="admonition-format-support admonition ">
 <p class="first admonition-title">Format Support</p>
-<p class="last">At this time, only <a class="reference internal" href="../api/#tablib.Dataset.xls" title="tablib.Dataset.xls"><tt class="xref py py-class docutils literal"><span class="pre">Excel</span></tt></a> output supports seperators.</p>
+<p class="last">At this time, only <a class="reference internal" href="../api/#tablib.Dataset.xls" title="tablib.Dataset.xls"><tt class="xref py py-class docutils literal"><span class="pre">Excel</span></tt></a> output supports separators.</p>
 </div>
 <hr class="docutils" />
 <p>Now, go check out the <a class="reference internal" href="../api/#api"><em>API Documentation</em></a> or begin <a class="reference internal" href="../development/#development"><em>Tablib Development</em></a>.</p>
